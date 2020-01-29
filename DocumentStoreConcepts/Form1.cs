@@ -36,11 +36,11 @@ namespace DocumentStoreConcepts
         {
             var grid = (DataGridView)sender;
 
-            if (!AnyRowsSelected(grid))
+            if (!DataGridOperations.AnyRowsSelected(grid))
                 return;
 
             var selectedGroups =
-                GetSelectedItems<DocumentGroup>
+                DataGridOperations.GetSelectedItems<DocumentGroup>
                 (
                     grdDocumentGroups,
                     bsDocumentGroups
@@ -50,40 +50,55 @@ namespace DocumentStoreConcepts
                 selectedGroups.
                 SelectMany(n => n.Documents);
             
-            documentsBindingSource.DataSource = documents;
-            documentsBindingSource.ResetBindings(true);
-        }
-
-        private static List<T> GetSelectedItems<T>(DataGridView grid, BindingSource source)
-        { 
-            var indices = GetSelectedIndices(grid);
-            var all = (List<T>)source.DataSource;
-            var selected = new List<T>();
-
-            indices.ForEach(n => selected.Add(all[n]));
-
-            return selected;
-        }
-
-        private static List<int> GetSelectedIndices(DataGridView grid)
-        {
-            var indices = new List<int>();
-
-            foreach (DataGridViewRow row in grid.SelectedRows)
-            {
-                indices.Add(row.Index);
-            }
-
-            return indices;
-        }
-
-        private static bool AnyRowsSelected(DataGridView grid)
-        {
-            return grid.SelectedRows.Count > 0;
+            bsDocuments.DataSource = documents;
+            bsDocuments.ResetBindings(true);
         }
 
         private void btnDownloadSelected_Click(object sender, EventArgs e)
         {
+            if (!DataGridOperations.AnyRowsSelected(grdDocuments))
+                return;
+
+            var selected = 
+                DataGridOperations.GetSelectedItems<Document>
+                (
+                    grdDocuments, 
+                    bsDocuments
+                );
+
+            // TODO: do something with these documents.
+        }
+
+        protected class DataGridOperations
+        {
+
+            public static List<T> GetSelectedItems<T>(DataGridView grid, BindingSource source)
+            {
+                var indices = GetSelectedIndices(grid);
+                var all = (List<T>)source.DataSource;
+                var selected = new List<T>();
+
+                indices.ForEach(n => selected.Add(all[n]));
+
+                return selected;
+            }
+
+            public static List<int> GetSelectedIndices(DataGridView grid)
+            {
+                var indices = new List<int>();
+
+                foreach (DataGridViewRow row in grid.SelectedRows)
+                {
+                    indices.Add(row.Index);
+                }
+
+                return indices;
+            }
+
+            public static bool AnyRowsSelected(DataGridView grid)
+            {
+                return grid.SelectedRows.Count > 0;
+            }
 
         }
     }

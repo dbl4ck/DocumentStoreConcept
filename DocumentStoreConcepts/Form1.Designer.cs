@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.grdDocumentGroups = new System.Windows.Forms.DataGridView();
             this.grdDocuments = new System.Windows.Forms.DataGridView();
-            this.documentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bsDocuments = new System.Windows.Forms.BindingSource(this.components);
             this.GroupRef = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DocumentCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,7 +45,7 @@
             this.deliveredDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdDocumentGroups)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdDocuments)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsDocuments)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsDocumentGroups)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,7 +96,7 @@
             this.dataGridViewTextBoxColumn1,
             this.typeDataGridViewTextBoxColumn1,
             this.filenameDataGridViewTextBoxColumn});
-            this.grdDocuments.DataSource = this.documentsBindingSource;
+            this.grdDocuments.DataSource = this.bsDocuments;
             this.grdDocuments.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.grdDocuments.Location = new System.Drawing.Point(493, 18);
             this.grdDocuments.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -112,8 +112,8 @@
             // 
             // documentsBindingSource
             // 
-            this.documentsBindingSource.DataMember = "Documents";
-            this.documentsBindingSource.DataSource = this.bsDocumentGroups;
+            this.bsDocuments.DataMember = "Documents";
+            this.bsDocuments.DataSource = this.bsDocumentGroups;
             // 
             // GroupRef
             // 
@@ -216,7 +216,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdDocumentGroups)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdDocuments)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsDocuments)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsDocumentGroups)).EndInit();
             this.ResumeLayout(false);
 
@@ -227,7 +227,7 @@
         private System.Windows.Forms.BindingSource bsDocumentGroups;
         private System.Windows.Forms.DataGridView grdDocumentGroups;
         private System.Windows.Forms.DataGridView grdDocuments;
-        private System.Windows.Forms.BindingSource documentsBindingSource;
+        private System.Windows.Forms.BindingSource bsDocuments;
         private System.Windows.Forms.DataGridViewTextBoxColumn GroupRef;
         private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn deliveredDataGridViewTextBoxColumn;
