@@ -29,30 +29,62 @@ namespace DocumentStoreConcepts
 
             model = factory.Generate();
 
-            GridBindingSource.DataSource = model;
+            bsDocumentGroups.DataSource = model;
         }
 
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        private void dgvDocumentGroups_SelectionChanged(object sender, EventArgs e)
         {
             var grid = (DataGridView)sender;
 
-            if (grid.SelectedRows.Count <= 0)
+            if (!AnyRowsSelected(grid))
                 return;
 
-            // get indices
+            var selectedGroups =
+                GetSelectedItems<DocumentGroup>
+                (
+                    grdDocumentGroups,
+                    bsDocumentGroups
+                );
+
+            var documents = 
+                selectedGroups.
+                SelectMany(n => n.Documents);
+            
+            documentsBindingSource.DataSource = documents;
+            documentsBindingSource.ResetBindings(true);
+        }
+
+        private static List<T> GetSelectedItems<T>(DataGridView grid, BindingSource source)
+        { 
+            var indices = GetSelectedIndices(grid);
+            var all = (List<T>)source.DataSource;
+            var selected = new List<T>();
+
+            indices.ForEach(n => selected.Add(all[n]));
+
+            return selected;
+        }
+
+        private static List<int> GetSelectedIndices(DataGridView grid)
+        {
             var indices = new List<int>();
+
             foreach (DataGridViewRow row in grid.SelectedRows)
             {
                 indices.Add(row.Index);
             }
 
-            // get data
-            var groups = (List<DocumentGroup>)GridBindingSource.DataSource;
-            var documents = new List<Document>();
-            indices.ForEach(n => documents.AddRange(groups[n].Documents));
+            return indices;
+        }
 
-            documentsBindingSource.DataSource = documents;
-            documentsBindingSource.ResetBindings(true);
+        private static bool AnyRowsSelected(DataGridView grid)
+        {
+            return grid.SelectedRows.Count > 0;
+        }
+
+        private void btnDownloadSelected_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

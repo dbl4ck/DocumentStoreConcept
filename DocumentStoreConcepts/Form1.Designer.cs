@@ -40,13 +40,13 @@
             this.thumbnailImageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.typeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.filenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GridBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bsDocumentGroups = new System.Windows.Forms.BindingSource(this.components);
             this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deliveredDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdDocumentGroups)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdDocuments)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsDocumentGroups)).BeginInit();
             this.SuspendLayout();
             // 
             // grdDocumentGroups
@@ -65,7 +65,7 @@
             this.typeDataGridViewTextBoxColumn,
             this.deliveredDataGridViewTextBoxColumn,
             this.DocumentCount});
-            this.grdDocumentGroups.DataSource = this.GridBindingSource;
+            this.grdDocumentGroups.DataSource = this.bsDocumentGroups;
             this.grdDocumentGroups.Location = new System.Drawing.Point(14, 18);
             this.grdDocumentGroups.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grdDocumentGroups.Name = "grdDocumentGroups";
@@ -77,7 +77,7 @@
             this.grdDocumentGroups.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdDocumentGroups.Size = new System.Drawing.Size(466, 416);
             this.grdDocumentGroups.TabIndex = 0;
-            this.grdDocumentGroups.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            this.grdDocumentGroups.SelectionChanged += new System.EventHandler(this.dgvDocumentGroups_SelectionChanged);
             // 
             // grdDocuments
             // 
@@ -113,7 +113,7 @@
             // documentsBindingSource
             // 
             this.documentsBindingSource.DataMember = "Documents";
-            this.documentsBindingSource.DataSource = this.GridBindingSource;
+            this.documentsBindingSource.DataSource = this.bsDocumentGroups;
             // 
             // GroupRef
             // 
@@ -151,6 +151,7 @@
             this.btnDownloadSelected.TabIndex = 2;
             this.btnDownloadSelected.Text = "             Download Selected";
             this.btnDownloadSelected.UseVisualStyleBackColor = true;
+            this.btnDownloadSelected.Click += new System.EventHandler(this.btnDownloadSelected_Click);
             // 
             // thumbnailImageDataGridViewImageColumn
             // 
@@ -181,7 +182,7 @@
             // 
             // GridBindingSource
             // 
-            this.GridBindingSource.DataSource = typeof(DocumentStoreConcepts.Models.DocumentGroup);
+            this.bsDocumentGroups.DataSource = typeof(DocumentStoreConcepts.Models.DocumentGroup);
             // 
             // typeDataGridViewTextBoxColumn
             // 
@@ -216,14 +217,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdDocumentGroups)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdDocuments)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsDocumentGroups)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.BindingSource GridBindingSource;
+        private System.Windows.Forms.BindingSource bsDocumentGroups;
         private System.Windows.Forms.DataGridView grdDocumentGroups;
         private System.Windows.Forms.DataGridView grdDocuments;
         private System.Windows.Forms.BindingSource documentsBindingSource;
