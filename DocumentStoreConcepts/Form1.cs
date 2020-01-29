@@ -67,7 +67,7 @@ namespace DocumentStoreConcepts
                 );
 
             // TODO: do something with these documents.
-            throw new NotImplementedException();
+            throw new NotImplementedException($"Not implemented, however {selected.Count} items were selected.");
         }
 
         protected class DataGridOperations
@@ -76,7 +76,7 @@ namespace DocumentStoreConcepts
             public static List<T> GetSelectedItems<T>(DataGridView grid, BindingSource source)
             {
                 var indices = GetSelectedIndices(grid);
-                var all = (List<T>)source.DataSource;
+                var all = ((IEnumerable<T>)source.DataSource).ToList();
                 var selected = new List<T>();
 
                 indices.ForEach(n => selected.Add(all[n]));
