@@ -69,6 +69,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="document.pdf" />
     <None Include="Properties\DataSources\DocumentStoreConcepts.Models.Document.datasource" />
     <None Include="Properties\DataSources\DocumentStoreConcepts.Models.DocumentGroup.datasource" />
     <None Include="Properties\Settings.settings">
