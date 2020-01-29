@@ -9,6 +9,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.IO.Compression;
+using Microsoft.VisualBasic.FileIO;
+using System.Diagnostics;
 
 namespace DocumentStoreConcepts
 {
@@ -66,8 +70,25 @@ namespace DocumentStoreConcepts
                     bsDocuments
                 );
 
-            // TODO: do something with these documents.
-            throw new NotImplementedException($"Not implemented, however {selected.Count} items were selected.");
+            // TODO: extract this to a ZipFactory;
+            var source = "document.pdf";
+            var uniquename = Guid.NewGuid().ToString();
+            var tempDir = Path.GetTempPath();
+            var basedir = Path.Combine(tempDir, uniquename);
+
+            Directory.CreateDirectory(basedir);
+
+            foreach(var document in selected)
+            {
+                var destination = Path.Combine(basedir, document.Filename);
+                File.Copy(source, destination);
+            }
+
+            var zipDest = Path.Combine(tempDir, uniquename);
+
+            ZipFile.CreateFromDirectory(basedir, zipDest);
+
+            Process.Start("explorer.exe", zipDest);
         }
 
         protected class DataGridOperations
