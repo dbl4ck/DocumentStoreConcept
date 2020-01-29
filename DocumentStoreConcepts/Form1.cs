@@ -67,6 +67,7 @@ namespace DocumentStoreConcepts
                 );
 
             // TODO: do something with these documents.
+            throw new NotImplementedException();
         }
 
         protected class DataGridOperations
