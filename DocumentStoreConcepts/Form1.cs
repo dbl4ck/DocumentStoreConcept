@@ -84,7 +84,7 @@ namespace DocumentStoreConcepts
                 File.Copy(source, destination);
             }
 
-            var zipDest = Path.Combine(tempDir, uniquename);
+            var zipDest = Path.Combine(tempDir, String.Concat(uniquename,".zip"));
 
             ZipFile.CreateFromDirectory(basedir, zipDest);
 
