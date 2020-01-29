@@ -29,85 +29,86 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.grdDocumentGroups = new System.Windows.Forms.DataGridView();
+            this.grdDocuments = new System.Windows.Forms.DataGridView();
             this.documentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.GroupRef = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DocumentCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDownloadSelected = new System.Windows.Forms.Button();
             this.thumbnailImageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.typeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.filenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deliveredDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdDocumentGroups)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdDocuments)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // grdDocumentGroups
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.grdDocumentGroups.AllowUserToAddRows = false;
+            this.grdDocumentGroups.AllowUserToDeleteRows = false;
+            this.grdDocumentGroups.AllowUserToResizeRows = false;
+            this.grdDocumentGroups.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grdDocumentGroups.AutoGenerateColumns = false;
+            this.grdDocumentGroups.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.grdDocumentGroups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdDocumentGroups.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GroupRef,
             this.typeDataGridViewTextBoxColumn,
             this.deliveredDataGridViewTextBoxColumn,
             this.DocumentCount});
-            this.dataGridView1.DataSource = this.GridBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(14, 18);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(466, 416);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            this.grdDocumentGroups.DataSource = this.GridBindingSource;
+            this.grdDocumentGroups.Location = new System.Drawing.Point(14, 18);
+            this.grdDocumentGroups.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grdDocumentGroups.Name = "grdDocumentGroups";
+            this.grdDocumentGroups.ReadOnly = true;
+            this.grdDocumentGroups.RowHeadersVisible = false;
+            this.grdDocumentGroups.RowHeadersWidth = 82;
+            this.grdDocumentGroups.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.grdDocumentGroups.RowTemplate.Height = 33;
+            this.grdDocumentGroups.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdDocumentGroups.Size = new System.Drawing.Size(466, 416);
+            this.grdDocumentGroups.TabIndex = 0;
+            this.grdDocumentGroups.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
-            // dataGridView2
+            // grdDocuments
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AllowUserToResizeRows = false;
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.grdDocuments.AllowUserToAddRows = false;
+            this.grdDocuments.AllowUserToDeleteRows = false;
+            this.grdDocuments.AllowUserToResizeRows = false;
+            this.grdDocuments.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.ColumnHeadersVisible = false;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grdDocuments.AutoGenerateColumns = false;
+            this.grdDocuments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.grdDocuments.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.grdDocuments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdDocuments.ColumnHeadersVisible = false;
+            this.grdDocuments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.thumbnailImageDataGridViewImageColumn,
             this.dataGridViewTextBoxColumn1,
             this.typeDataGridViewTextBoxColumn1,
             this.filenameDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.documentsBindingSource;
-            this.dataGridView2.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.dataGridView2.Location = new System.Drawing.Point(493, 18);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataGridView2.MultiSelect = false;
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.RowHeadersWidth = 82;
-            this.dataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView2.RowTemplate.Height = 33;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(303, 416);
-            this.dataGridView2.TabIndex = 1;
+            this.grdDocuments.DataSource = this.documentsBindingSource;
+            this.grdDocuments.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.grdDocuments.Location = new System.Drawing.Point(493, 18);
+            this.grdDocuments.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grdDocuments.Name = "grdDocuments";
+            this.grdDocuments.ReadOnly = true;
+            this.grdDocuments.RowHeadersVisible = false;
+            this.grdDocuments.RowHeadersWidth = 82;
+            this.grdDocuments.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.grdDocuments.RowTemplate.Height = 33;
+            this.grdDocuments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdDocuments.Size = new System.Drawing.Size(303, 352);
+            this.grdDocuments.TabIndex = 1;
             // 
             // documentsBindingSource
             // 
@@ -138,6 +139,18 @@
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 5;
+            // 
+            // btnDownloadSelected
+            // 
+            this.btnDownloadSelected.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDownloadSelected.Image = ((System.Drawing.Image)(resources.GetObject("btnDownloadSelected.Image")));
+            this.btnDownloadSelected.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDownloadSelected.Location = new System.Drawing.Point(493, 377);
+            this.btnDownloadSelected.Name = "btnDownloadSelected";
+            this.btnDownloadSelected.Size = new System.Drawing.Size(177, 57);
+            this.btnDownloadSelected.TabIndex = 2;
+            this.btnDownloadSelected.Text = "             Download Selected";
+            this.btnDownloadSelected.UseVisualStyleBackColor = true;
             // 
             // thumbnailImageDataGridViewImageColumn
             // 
@@ -193,14 +206,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(807, 445);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnDownloadSelected);
+            this.Controls.Add(this.grdDocuments);
+            this.Controls.Add(this.grdDocumentGroups);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdDocumentGroups)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdDocuments)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -210,8 +224,8 @@
         #endregion
 
         private System.Windows.Forms.BindingSource GridBindingSource;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView grdDocumentGroups;
+        private System.Windows.Forms.DataGridView grdDocuments;
         private System.Windows.Forms.BindingSource documentsBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn GroupRef;
         private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
@@ -221,6 +235,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn filenameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnDownloadSelected;
     }
 }
 
